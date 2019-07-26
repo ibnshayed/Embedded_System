@@ -1,0 +1,254 @@
+[
+    {
+        "id": "f146bf9.208f84",
+        "type": "tab",
+        "label": "AVRserial",
+        "disabled": false,
+        "info": "test successful"
+    },
+    {
+        "id": "e4d56c67.16786",
+        "type": "debug",
+        "z": "f146bf9.208f84",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "x": 710,
+        "y": 241,
+        "wires": []
+    },
+    {
+        "id": "5341b8f2.274e58",
+        "type": "ui_text",
+        "z": "f146bf9.208f84",
+        "group": "159776cc.320bb9",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "out",
+        "label": "Ouput",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 727,
+        "y": 87,
+        "wires": []
+    },
+    {
+        "id": "f243da06.5e2748",
+        "type": "ui_button",
+        "z": "f146bf9.208f84",
+        "name": "LED 1",
+        "group": "159776cc.320bb9",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "LED 1",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "1",
+        "payloadType": "str",
+        "topic": "",
+        "x": 216,
+        "y": 178,
+        "wires": [
+            [
+                "e40c8456.477d88"
+            ]
+        ]
+    },
+    {
+        "id": "190b4d0a.5fafc3",
+        "type": "ui_button",
+        "z": "f146bf9.208f84",
+        "name": "LED 0",
+        "group": "159776cc.320bb9",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "LED 0",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "0",
+        "payloadType": "str",
+        "topic": "",
+        "x": 216,
+        "y": 123,
+        "wires": [
+            [
+                "e40c8456.477d88"
+            ]
+        ]
+    },
+    {
+        "id": "e5072a8c.c679a8",
+        "type": "ui_button",
+        "z": "f146bf9.208f84",
+        "name": "LED 2",
+        "group": "159776cc.320bb9",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "LED 2",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "2",
+        "payloadType": "str",
+        "topic": "",
+        "x": 218,
+        "y": 230,
+        "wires": [
+            [
+                "e40c8456.477d88"
+            ]
+        ]
+    },
+    {
+        "id": "6f1a9061.19ab9",
+        "type": "ui_button",
+        "z": "f146bf9.208f84",
+        "name": "LED 3",
+        "group": "159776cc.320bb9",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "LED 3",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "3",
+        "payloadType": "str",
+        "topic": "",
+        "x": 217,
+        "y": 285,
+        "wires": [
+            [
+                "e40c8456.477d88"
+            ]
+        ]
+    },
+    {
+        "id": "efce30cb.b7d03",
+        "type": "ui_button",
+        "z": "f146bf9.208f84",
+        "name": "LED 4",
+        "group": "159776cc.320bb9",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "LED 4",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "4",
+        "payloadType": "str",
+        "topic": "",
+        "x": 215,
+        "y": 343,
+        "wires": [
+            [
+                "e40c8456.477d88"
+            ]
+        ]
+    },
+    {
+        "id": "66db967a.c22288",
+        "type": "ui_button",
+        "z": "f146bf9.208f84",
+        "name": "LED 5",
+        "group": "159776cc.320bb9",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "LED 5",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "5",
+        "payloadType": "str",
+        "topic": "",
+        "x": 216,
+        "y": 404,
+        "wires": [
+            [
+                "e40c8456.477d88"
+            ]
+        ]
+    },
+    {
+        "id": "5700fb8a.43c354",
+        "type": "serial in",
+        "z": "f146bf9.208f84",
+        "name": "",
+        "serial": "2416c27.c8a1c3e",
+        "x": 455,
+        "y": 99,
+        "wires": [
+            [
+                "5341b8f2.274e58",
+                "e4d56c67.16786"
+            ]
+        ]
+    },
+    {
+        "id": "e40c8456.477d88",
+        "type": "serial out",
+        "z": "f146bf9.208f84",
+        "name": "",
+        "serial": "2416c27.c8a1c3e",
+        "x": 528,
+        "y": 293,
+        "wires": []
+    },
+    {
+        "id": "159776cc.320bb9",
+        "type": "ui_group",
+        "z": "",
+        "name": "Led Control",
+        "tab": "92062a41.1a4be8",
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "2416c27.c8a1c3e",
+        "type": "serial-port",
+        "z": "",
+        "serialport": "/dev/ttyACM0",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": false,
+        "responsetimeout": "3000"
+    },
+    {
+        "id": "92062a41.1a4be8",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
