@@ -11,7 +11,6 @@
 
 #define F_CPU 16000000UL
 
-
 #define FOSC 16000000 /**< Clock speed for UBRR calculation. refer page 179 of 328p datasheet. */
 #define BAUD 9600 /**< Baud Rate in bps. refer page 179 of 328p datasheet. */
 #define MYUBRR FOSC/16/BAUD-1 /**< UBRR = (F_CPU/(16*Baud))-1 for asynch USART page 179 328p datasheet. Baud rate 9600bps, assuming	16MHz clock UBRR0 becomes 0x0067*/
@@ -24,17 +23,15 @@ int result;
  * @param ubrr The UBRR value calculated in macro MYUBRR
  * @see MYUBRR
  */
-void USART_init(unsigned int ubrr)
-{
+void USART_init(unsigned int ubrr) {
 
-	UCSR0C = (0<<USBS0)|(3<<UCSZ00); /// Step 1. Set UCSR0C in Asynchronous mode, no parity, 1 stop bit, 8 data bits
-	UCSR0A = 0b00000000;/// Step 2. Set UCSR0A in Normal speed, disable multi-proc
+	UCSR0C = (0 << USBS0) | (3 << UCSZ00); /// Step 1. Set UCSR0C in Asynchronous mode, no parity, 1 stop bit, 8 data bits
+	UCSR0A = 0b00000000; /// Step 2. Set UCSR0A in Normal speed, disable multi-proc
 
-	UBRR0H = (unsigned char)(ubrr>>8);/// Step 3. Load ubrr into UBRR0H and UBRR0L
-	UBRR0L = (unsigned char)ubrr;
+	UBRR0H = (unsigned char) (ubrr >> 8); /// Step 3. Load ubrr into UBRR0H and UBRR0L
+	UBRR0L = (unsigned char) ubrr;
 
-
-	UCSR0B = 0b00011000;/// Step 4. Enable Tx Rx and disable interrupt in UCSR0B
+	UCSR0B = 0b00011000; /// Step 4. Enable Tx Rx and disable interrupt in UCSR0B
 }
 
 /**
@@ -45,11 +42,12 @@ void USART_init(unsigned int ubrr)
  * @param data The 8 bit data to be sent
  */
 
-int USART_send(char c, FILE *stream)
-{
+int USART_send(char c, FILE *stream) {
 
-	while ( !( UCSR0A & (1<<UDRE0)) )/// Step 1.  Wait until UDRE0 flag is high. Busy Waitinig
-	{;}
+	while (!(UCSR0A & (1 << UDRE0))) /// Step 1.  Wait until UDRE0 flag is high. Busy Waitinig
+	{
+		;
+	}
 
 	UDR0 = c; /// Step 2. Write char to UDR0 for transmission
 }
@@ -61,21 +59,20 @@ int USART_send(char c, FILE *stream)
  *
  * @return Returns received data from UDR0
  */
-int USART_receive(FILE *stream )
-{
+int USART_receive(FILE *stream) {
 
-	while ( !(UCSR0A & (1<<RXC0)) )/// Step 1. Wait for Receive Complete Flag is high. Busy waiting
+	while (!(UCSR0A & (1 << RXC0)))
+		/// Step 1. Wait for Receive Complete Flag is high. Busy waiting
 		;
 
-	return UDR0;/// Step 2. Get and return received data from buffer
+	return UDR0; /// Step 2. Get and return received data from buffer
 }
 
-void init_ADC()
-{
+void init_ADC() {
 	/// ADMUX section 23.9.1 page 262
 	///BIT 7 and BIT 6  AVCC with external capacitor at AREF pin REFS0 =0 and REFS1= 1
 	/// BIT 5  ADC Left Adjust Result ADLAR = 0
-    /// BIT 3:0 MUX3:0 0b0000 for channel 0
+	/// BIT 3:0 MUX3:0 0b0000 for channel 0
 	ADMUX = 0b01000000;
 	//same as previous line
 	//	ADMUX = (_BV(REFS0))| (ADMUX & ~_BV(REFS1))|(_BV(ADLAR))|(ADMUX & ~_BV(MUX3))|(ADMUX & ~_BV(MUX2))|(ADMUX & ~_BV(MUX1))|(ADMUX & ~_BV(MUX0));
@@ -94,27 +91,44 @@ void init_ADC()
 	ADCSRA = 0b10000111;
 
 }
-int main()
-{
+int main() {
 
 	init_ADC();
 	USART_init(MYUBRR);
 	stdout = fdevopen(USART_send, NULL);
 	stdin = fdevopen(NULL, USART_receive);
 
-	while(1)
-	{
-		ADCSRA |= (1<<ADSC);
-		while (bit_is_set(ADCSRA,ADSC))
-		{
+	while (1) {
+		//ADC0
+		ADCSRA |= (1 << ADSC);
+		while (bit_is_set(ADCSRA, ADSC)) {
 			;
 		}
 		result = ADC;
 		//printf("{\"adc0\":%d}\n",result); //for adc0 and thirmistor
-		printf("{\"adc0%d\":%d}\n",bit_is_set(ADMUX,0),result); // For Joystick
-		ADMUX ^= (1<<0); // for Joystick
+		printf("{\"adc0%d\":%d}\n", bit_is_set(ADMUX, 0), result); // For Joystick
+		//ADMUX ^= (1<<0); // for Joystick
 		_delay_ms(100);
 
+		//ADC1
+		ADMUX = 0b01000001;
+		ADCSRA |= (1 << ADSC);
+		while (bit_is_set(ADCSRA, ADSC)) {
+			;
+		}
+		result = ADC;
+		printf("{\"adc0%d\":%d}\n", bit_is_set(ADMUX, 0b01000001), result); // For Joystick
+		_delay_ms(100);
+
+		//ADC2
+		ADMUX = 0b01000010;
+		ADCSRA |= (1 << ADSC);
+		while (bit_is_set(ADCSRA, ADSC)) {
+			;
+		}
+		result = ADC;
+		printf("{\"adc%d%d\":%d}\n", bit_is_set(ADMUX, 0b01000010),bit_is_set(ADMUX, 0b01000000), result); // For Joystick
+		_delay_ms(100);
 
 	}
 }
