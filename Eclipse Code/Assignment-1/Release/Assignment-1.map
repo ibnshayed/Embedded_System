@@ -162,7 +162,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x0000000000000000      0xb7e
+.text           0x0000000000000000      0xaec
  *(.vectors)
  .vectors       0x0000000000000000       0x68 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega328p.o
                 0x0000000000000000                __vectors
@@ -276,117 +276,116 @@ END GROUP
                 0x00000000000000c4       0x1a ./Main.o
                 0x00000000000000c4                USART_init
  .text.init_ADC
-                0x00000000000000de        0xe ./Main.o
+                0x00000000000000de       0x14 ./Main.o
                 0x00000000000000de                init_ADC
- .text.read_ADC
-                0x00000000000000ec       0x2a ./Main.o
-                0x00000000000000ec                read_ADC
+ .text.motor    0x00000000000000f2       0x70 ./Main.o
+                0x00000000000000f2                motor
  .text.startup.main
-                0x0000000000000116      0x18a ./Main.o
-                0x0000000000000116                main
+                0x0000000000000162       0xac ./Main.o
+                0x0000000000000162                main
  .text.libgcc.mul
-                0x00000000000002a0        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
+                0x000000000000020e        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
  .text.libgcc.div
-                0x00000000000002a0        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
- .text.libgcc   0x00000000000002a0        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
+                0x000000000000020e        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
+ .text.libgcc   0x000000000000020e        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
  .text.libgcc.prologue
-                0x00000000000002a0        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
+                0x000000000000020e        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
  .text.libgcc.builtins
-                0x00000000000002a0        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
+                0x000000000000020e        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
  .text.libgcc.fmul
-                0x00000000000002a0        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
+                0x000000000000020e        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
  .text.libgcc.fixed
-                0x00000000000002a0        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
+                0x000000000000020e        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
  .text.libgcc.mul
-                0x00000000000002a0        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
+                0x000000000000020e        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
  .text.libgcc.div
-                0x00000000000002a0        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
- .text.libgcc   0x00000000000002a0        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
+                0x000000000000020e        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
+ .text.libgcc   0x000000000000020e        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
  .text.libgcc.prologue
-                0x00000000000002a0        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
+                0x000000000000020e        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
  .text.libgcc.builtins
-                0x00000000000002a0        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
+                0x000000000000020e        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
  .text.libgcc.fmul
-                0x00000000000002a0        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
+                0x000000000000020e        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
  .text.libgcc.fixed
-                0x00000000000002a0        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
+                0x000000000000020e        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
  .text.libgcc.mul
-                0x00000000000002a0        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
+                0x000000000000020e        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
  .text.libgcc.div
-                0x00000000000002a0        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
- .text.libgcc   0x00000000000002a0        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
+                0x000000000000020e        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
+ .text.libgcc   0x000000000000020e        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
  .text.libgcc.prologue
-                0x00000000000002a0        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
+                0x000000000000020e        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
  .text.libgcc.builtins
-                0x00000000000002a0        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
+                0x000000000000020e        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
  .text.libgcc.fmul
-                0x00000000000002a0        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
+                0x000000000000020e        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
  .text.libgcc.fixed
-                0x00000000000002a0        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
+                0x000000000000020e        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
  .text.avr-libc
-                0x00000000000002a0       0x96 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(fdevopen.o)
-                0x00000000000002a0                fdevopen
+                0x000000000000020e       0x96 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(fdevopen.o)
+                0x000000000000020e                fdevopen
  .text.avr-libc
-                0x0000000000000336       0x2c /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(printf.o)
-                0x0000000000000336                printf
+                0x00000000000002a4       0x2c /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(printf.o)
+                0x00000000000002a4                printf
  .text.avr-libc
-                0x0000000000000362      0x3c2 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(vfprintf_std.o)
-                0x0000000000000362                vfprintf
+                0x00000000000002d0      0x3c2 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(vfprintf_std.o)
+                0x00000000000002d0                vfprintf
  .text.avr-libc
-                0x0000000000000724       0x38 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(calloc.o)
-                0x0000000000000724                calloc
+                0x0000000000000692       0x38 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(calloc.o)
+                0x0000000000000692                calloc
  .text.avr-libc
-                0x000000000000075c      0x242 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(malloc.o)
-                0x000000000000075c                malloc
-                0x000000000000088c                free
+                0x00000000000006ca      0x242 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(malloc.o)
+                0x00000000000006ca                malloc
+                0x00000000000007fa                free
  .text.avr-libc
-                0x000000000000099e       0x16 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strnlen_P.o)
-                0x000000000000099e                strnlen_P
+                0x000000000000090c       0x16 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strnlen_P.o)
+                0x000000000000090c                strnlen_P
  .text.avr-libc
-                0x00000000000009b4        0xe /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(memset.o)
-                0x00000000000009b4                memset
+                0x0000000000000922        0xe /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(memset.o)
+                0x0000000000000922                memset
  .text.avr-libc
-                0x00000000000009c2       0x16 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strnlen.o)
-                0x00000000000009c2                strnlen
+                0x0000000000000930       0x16 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strnlen.o)
+                0x0000000000000930                strnlen
  .text.avr-libc
-                0x00000000000009d8       0x78 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(fputc.o)
-                0x00000000000009d8                fputc
+                0x0000000000000946       0x78 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(fputc.o)
+                0x0000000000000946                fputc
  .text.avr-libc
-                0x0000000000000a50       0xbc /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(ultoa_invert.o)
-                0x0000000000000a50                __ultoa_invert
+                0x00000000000009be       0xbc /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(ultoa_invert.o)
+                0x00000000000009be                __ultoa_invert
  .text.libgcc.mul
-                0x0000000000000b0c        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
+                0x0000000000000a7a        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
  .text.libgcc.div
-                0x0000000000000b0c        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
- .text.libgcc   0x0000000000000b0c        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
+                0x0000000000000a7a        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
+ .text.libgcc   0x0000000000000a7a        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
  .text.libgcc.prologue
-                0x0000000000000b0c       0x38 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
-                0x0000000000000b0c                __prologue_saves__
+                0x0000000000000a7a       0x38 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
+                0x0000000000000a7a                __prologue_saves__
  .text.libgcc.builtins
-                0x0000000000000b44        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
+                0x0000000000000ab2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
  .text.libgcc.fmul
-                0x0000000000000b44        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
+                0x0000000000000ab2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
  .text.libgcc.fixed
-                0x0000000000000b44        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
+                0x0000000000000ab2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
  .text.libgcc.mul
-                0x0000000000000b44        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
+                0x0000000000000ab2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
  .text.libgcc.div
-                0x0000000000000b44        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
- .text.libgcc   0x0000000000000b44        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
+                0x0000000000000ab2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
+ .text.libgcc   0x0000000000000ab2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
  .text.libgcc.prologue
-                0x0000000000000b44       0x36 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
-                0x0000000000000b44                __epilogue_restores__
+                0x0000000000000ab2       0x36 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
+                0x0000000000000ab2                __epilogue_restores__
  .text.libgcc.builtins
-                0x0000000000000b7a        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
+                0x0000000000000ae8        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
  .text.libgcc.fmul
-                0x0000000000000b7a        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
+                0x0000000000000ae8        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
  .text.libgcc.fixed
-                0x0000000000000b7a        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
-                0x0000000000000b7a                . = ALIGN (0x2)
+                0x0000000000000ae8        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
+                0x0000000000000ae8                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000000000000b7a        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
-                0x0000000000000b7a                exit
-                0x0000000000000b7a                _exit
+ .fini9         0x0000000000000ae8        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
+                0x0000000000000ae8                exit
+                0x0000000000000ae8                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -405,11 +404,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000000000000b7a        0x4 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
+ .fini0         0x0000000000000ae8        0x4 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
  *(.fini0)
-                0x0000000000000b7e                _etext = .
+                0x0000000000000aec                _etext = .
 
-.data           0x0000000000800100       0x40 load address 0x0000000000000b7e
+.data           0x0000000000800100       0x12 load address 0x0000000000000aec
                 0x0000000000800100                PROVIDE (__data_start, .)
  *(.data)
  .data          0x0000000000800100        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega328p.o
@@ -437,53 +436,53 @@ END GROUP
  *(.rodata)
  *(.rodata*)
  .rodata.str1.1
-                0x0000000000800106       0x39 ./Main.o
+                0x0000000000800106        0xb ./Main.o
  *(.gnu.linkonce.d*)
-                0x0000000000800140                . = ALIGN (0x2)
- *fill*         0x000000000080013f        0x1 
-                0x0000000000800140                _edata = .
-                0x0000000000800140                PROVIDE (__data_end, .)
+                0x0000000000800112                . = ALIGN (0x2)
+ *fill*         0x0000000000800111        0x1 
+                0x0000000000800112                _edata = .
+                0x0000000000800112                PROVIDE (__data_end, .)
 
-.bss            0x0000000000800140        0xc
-                0x0000000000800140                PROVIDE (__bss_start, .)
+.bss            0x0000000000800112        0xc
+                0x0000000000800112                PROVIDE (__bss_start, .)
  *(.bss)
- .bss           0x0000000000800140        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega328p.o
- .bss           0x0000000000800140        0x0 ./Main.o
- .bss           0x0000000000800140        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
- .bss           0x0000000000800140        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
- .bss           0x0000000000800140        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
- .bss           0x0000000000800140        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(fdevopen.o)
- .bss           0x0000000000800140        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(iob.o)
- .bss           0x0000000000800140        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(printf.o)
- .bss           0x0000000000800140        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(vfprintf_std.o)
- .bss           0x0000000000800140        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(calloc.o)
- .bss           0x0000000000800140        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(malloc.o)
- .bss           0x0000000000800140        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strnlen_P.o)
- .bss           0x0000000000800140        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(memset.o)
- .bss           0x0000000000800140        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strnlen.o)
- .bss           0x0000000000800140        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(fputc.o)
- .bss           0x0000000000800140        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(ultoa_invert.o)
- .bss           0x0000000000800140        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
- .bss           0x0000000000800140        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
+ .bss           0x0000000000800112        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega328p.o
+ .bss           0x0000000000800112        0x0 ./Main.o
+ .bss           0x0000000000800112        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
+ .bss           0x0000000000800112        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
+ .bss           0x0000000000800112        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
+ .bss           0x0000000000800112        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(fdevopen.o)
+ .bss           0x0000000000800112        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(iob.o)
+ .bss           0x0000000000800112        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(printf.o)
+ .bss           0x0000000000800112        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(vfprintf_std.o)
+ .bss           0x0000000000800112        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(calloc.o)
+ .bss           0x0000000000800112        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(malloc.o)
+ .bss           0x0000000000800112        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strnlen_P.o)
+ .bss           0x0000000000800112        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(memset.o)
+ .bss           0x0000000000800112        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strnlen.o)
+ .bss           0x0000000000800112        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(fputc.o)
+ .bss           0x0000000000800112        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(ultoa_invert.o)
+ .bss           0x0000000000800112        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
+ .bss           0x0000000000800112        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
  *(.bss*)
  *(COMMON)
- COMMON         0x0000000000800140        0x2 ./Main.o
-                0x0000000000800140                result
- COMMON         0x0000000000800142        0x6 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(iob.o)
-                0x0000000000800142                __iob
- COMMON         0x0000000000800148        0x4 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(malloc.o)
-                0x0000000000800148                __brkval
-                0x000000000080014a                __flp
-                0x000000000080014c                PROVIDE (__bss_end, .)
-                0x0000000000000b7e                __data_load_start = LOADADDR (.data)
-                0x0000000000000bbe                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x0000000000800112        0x2 ./Main.o
+                0x0000000000800112                result
+ COMMON         0x0000000000800114        0x6 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(iob.o)
+                0x0000000000800114                __iob
+ COMMON         0x000000000080011a        0x4 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(malloc.o)
+                0x000000000080011a                __brkval
+                0x000000000080011c                __flp
+                0x000000000080011e                PROVIDE (__bss_end, .)
+                0x0000000000000aec                __data_load_start = LOADADDR (.data)
+                0x0000000000000afe                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x000000000080014c        0x0
+.noinit         0x000000000080011e        0x0
                 [!provide]                        PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                        PROVIDE (__noinit_end, .)
-                0x000000000080014c                _end = .
-                0x000000000080014c                PROVIDE (__heap_start, .)
+                0x000000000080011e                _end = .
+                0x000000000080011e                PROVIDE (__heap_start, .)
 
 .eeprom         0x0000000000810000        0x0
  *(.eeprom*)
@@ -605,5 +604,5 @@ END GROUP
 
 .debug_macro
  *(.debug_macro)
-OUTPUT(Assignment-4.elf elf32-avr)
+OUTPUT(Assignment-1.elf elf32-avr)
 LOAD linker stubs
