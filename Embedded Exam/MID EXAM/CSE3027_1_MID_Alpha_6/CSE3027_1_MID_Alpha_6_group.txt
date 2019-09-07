@@ -1,0 +1,14 @@
+Group Name: Alpha
+
+Member 1:
+	Name: Al-Amin Hosain
+	ID: 2016100000142
+
+Member 2:
+	Name: Mohammad Al Imran Sagor
+	ID: 2015200000062
+
+Member 3:
+	Name: Md. Al - Emran
+	ID: 2017000000030
+
