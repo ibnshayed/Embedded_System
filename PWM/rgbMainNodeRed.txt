@@ -1,0 +1,330 @@
+[
+    {
+        "id": "cd185f15.f954a",
+        "type": "tab",
+        "label": "RGB-Led",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "19622716.1980b9",
+        "type": "ui_slider",
+        "z": "cd185f15.f954a",
+        "name": "red",
+        "label": "Red",
+        "tooltip": "",
+        "group": "159776cc.320bb9",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "red",
+        "min": 0,
+        "max": "255",
+        "step": 1,
+        "x": 241,
+        "y": 131,
+        "wires": [
+            [
+                "9d2abba6.5d2138"
+            ]
+        ]
+    },
+    {
+        "id": "d8ff553f.232388",
+        "type": "ui_slider",
+        "z": "cd185f15.f954a",
+        "name": "green",
+        "label": "Green",
+        "tooltip": "",
+        "group": "159776cc.320bb9",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "green",
+        "min": 0,
+        "max": "255",
+        "step": 1,
+        "x": 204,
+        "y": 212,
+        "wires": [
+            [
+                "ba589560.fb35f8"
+            ]
+        ]
+    },
+    {
+        "id": "9728ecad.d4d4",
+        "type": "ui_slider",
+        "z": "cd185f15.f954a",
+        "name": "blue",
+        "label": "Blue",
+        "tooltip": "",
+        "group": "159776cc.320bb9",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "blue",
+        "min": 0,
+        "max": "255",
+        "step": 1,
+        "x": 250,
+        "y": 324,
+        "wires": [
+            [
+                "dbe459f9.50e4f8"
+            ]
+        ]
+    },
+    {
+        "id": "9d2abba6.5d2138",
+        "type": "function",
+        "z": "cd185f15.f954a",
+        "name": "red_val",
+        "func": "var red = flow.get('red')|| 0;\nred = msg.payload;\nflow.set('red',red);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 450,
+        "y": 162,
+        "wires": [
+            [
+                "3c8f69e2.662e46"
+            ]
+        ]
+    },
+    {
+        "id": "ba589560.fb35f8",
+        "type": "function",
+        "z": "cd185f15.f954a",
+        "name": "green_val",
+        "func": "var green = flow.get('green')|| 0;\ngreen = msg.payload;\nflow.set('green',green);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 445,
+        "y": 213,
+        "wires": [
+            [
+                "3c8f69e2.662e46"
+            ]
+        ]
+    },
+    {
+        "id": "dbe459f9.50e4f8",
+        "type": "function",
+        "z": "cd185f15.f954a",
+        "name": "blue_val",
+        "func": "var blue = flow.get('blue')|| 0;\nblue = msg.payload;\nflow.set('blue',blue);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 449,
+        "y": 275,
+        "wires": [
+            [
+                "3c8f69e2.662e46"
+            ]
+        ]
+    },
+    {
+        "id": "17ba08ec.f62f27",
+        "type": "debug",
+        "z": "cd185f15.f954a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "x": 1118,
+        "y": 234,
+        "wires": []
+    },
+    {
+        "id": "3c8f69e2.662e46",
+        "type": "function",
+        "z": "cd185f15.f954a",
+        "name": "combine",
+        "func": "var red = flow.get('red')|| 0;\nvar green = flow.get('green')|| 0;\nvar blue = flow.get('blue')|| 0;\nmsg.payload = red + ' '+ green + ' '+ blue+'\\r\\n';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 669,
+        "y": 204,
+        "wires": [
+            [
+                "a6bee870.eb6078"
+            ]
+        ]
+    },
+    {
+        "id": "de5ed5ea.f8e408",
+        "type": "serial out",
+        "z": "cd185f15.f954a",
+        "name": "",
+        "serial": "3cf0d3e7.64886c",
+        "x": 965,
+        "y": 359,
+        "wires": []
+    },
+    {
+        "id": "40a97d45.b0b6a4",
+        "type": "serial in",
+        "z": "cd185f15.f954a",
+        "name": "",
+        "serial": "3cf0d3e7.64886c",
+        "x": 776,
+        "y": 87,
+        "wires": [
+            [
+                "7f34c132.c7198"
+            ]
+        ]
+    },
+    {
+        "id": "a6bee870.eb6078",
+        "type": "debouncer",
+        "z": "cd185f15.f954a",
+        "name": "",
+        "maxTopics": 1000000,
+        "interval": "100",
+        "x": 780,
+        "y": 292,
+        "wires": [
+            [
+                "de5ed5ea.f8e408"
+            ]
+        ]
+    },
+    {
+        "id": "7f34c132.c7198",
+        "type": "json",
+        "z": "cd185f15.f954a",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 950,
+        "y": 149,
+        "wires": [
+            [
+                "efd4bdb3.68945"
+            ]
+        ]
+    },
+    {
+        "id": "494c5322.42e11c",
+        "type": "ui_chart",
+        "z": "cd185f15.f954a",
+        "name": "",
+        "group": "159776cc.320bb9",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "RGB Status",
+        "chartType": "bar",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "255",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 1312,
+        "y": 24,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "efd4bdb3.68945",
+        "type": "function",
+        "z": "cd185f15.f954a",
+        "name": "chart_formatter",
+        "func": "if(msg.payload.hasOwnProperty('Red'))\n{\n    return {topic: 'Red', payload:msg.payload.Red};\n}\nelse if(msg.payload.hasOwnProperty('Green'))\n{\n    return {topic: 'Green', payload:msg.payload.Green};\n}\nelse if(msg.payload.hasOwnProperty('Blue'))\n{\n    return {topic: 'Blue', payload:msg.payload.Blue};\n}\n\nelse{\n    return []; //blank\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1106,
+        "y": 85,
+        "wires": [
+            [
+                "494c5322.42e11c",
+                "17ba08ec.f62f27"
+            ]
+        ]
+    },
+    {
+        "id": "3b78f13c.8520be",
+        "type": "comment",
+        "z": "cd185f15.f954a",
+        "name": "debouncer",
+        "info": "Send message every 100ms. Else it will overwhelm usart",
+        "x": 762,
+        "y": 342,
+        "wires": []
+    },
+    {
+        "id": "3e7f5ae3.dabbc6",
+        "type": "comment",
+        "z": "cd185f15.f954a",
+        "name": "Arduino Board Config",
+        "info": "Change port as needed. Configured for Nano\n9600,8,n,1\nsplit at }",
+        "x": 804.5,
+        "y": 53,
+        "wires": []
+    },
+    {
+        "id": "159776cc.320bb9",
+        "type": "ui_group",
+        "z": "",
+        "name": "Led Control",
+        "tab": "92062a41.1a4be8",
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "3cf0d3e7.64886c",
+        "type": "serial-port",
+        "z": "",
+        "serialport": "/dev/ttyUSB0",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "newline": "}",
+        "bin": "false",
+        "out": "char",
+        "addchar": false,
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "92062a41.1a4be8",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
